@@ -40,30 +40,37 @@
       margin: 0;
       background-color: hsl(0, 0%, 100%);
     }
-    .input {
+    .input-day, .input-month {
       display: flex;
       flex-direction: column;
       padding: 1rem;
       width: 120px;
       background-color: hsl(0, 0%, 100%);
     }
-    .input label {
+    .input-year{
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      width: 180px;
+      background-color: hsl(0, 0%, 100%);
+    }
+    .input-day label, .input-month label, .input-year label {
       margin-bottom: 0.5rem;
       font-size: 14px;
       text-transform: uppercase;
       font-weight: 600;
       color: hsl(0, 1%, 44%);
     }
-    .input input {
+    .input-day input, .input-month input, .input-year input {
       padding: 0.6rem 1rem;
       border: 1px solid hsl(0, 0%, 86%);
       border-radius: 5px;
       background-color: hsl(0, 0%, 100%);
-      font-size: 1.5rem;
+      font-size: 32px;
       font-weight: 700;
       color: hsl(0, 0%, 8%);
     }
-    .input input:focus {
+    .input-day input:focus, .input-month input:focus, .input-year input:focus {
       outline: none;
       border: 1px solid hsl(259, 100%, 65%);
     }
@@ -117,7 +124,7 @@
       border-radius: 15px 15px 150px 15px;
       flex-direction: column;
       margin: 0;
-      padding: 0rem 2rem 2rem 2rem;
+      padding: 2rem 2rem 2rem 2rem;
       background-color: hsl(0, 0%, 100%);
     }
     .output-data h1 {
@@ -130,7 +137,7 @@
     .msg-empty-day, .msg-empty-month, .msg-empty-year, .msg-invalid-day, .msg-invalid-month, .msg-invalid-year {
       display: none;
       margin-top: 5px;
-      font-size: 10px;
+      font-size: 12px;
       font-style: italic;
       color: hsl(0, 100%, 74%);
     }
@@ -145,10 +152,10 @@
       .input-data {
         padding: 1rem 1rem 1rem 0rem;
       }
-      .input {
+      .input-day, .input-month, .input-year {
         width: 80px;
       }
-      .input input {
+      .input-day input, .input-month input, .input-year input {
         font-size: 0.8rem;
       }
       .btn-container {
@@ -180,19 +187,19 @@
   <main>
     <div class="calculator-container">
       <div class="input-data">
-        <div class="input">
+        <div class="input-day">
           <label for="day">Day</label>
           <input type="number" id="day" name="day" placeholder="DD" oninput="inputDay()"/>
           <span class="msg-empty-day">This field is required</span>
           <span class="msg-invalid-day">Must be a valid day</span>
         </div>
-        <div class="input">
+        <div class="input-month">
           <label for="month">Month</label>
           <input type="number" id="month" name="month" placeholder="MM" oninput="inputMonth()"/>
           <span class="msg-empty-month">This field is required</span>
           <span class="msg-invalid-month">Must be a valid month</span>
         </div>
-        <div class="input">
+        <div class="input-year">
           <label for="year">Year</label>
           <input type="number" id="year" name="year" placeholder="YYYY" oninput="inputYear()"/>
           <span class="msg-empty-year">This field is required</span>
